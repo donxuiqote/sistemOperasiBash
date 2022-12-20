@@ -3,8 +3,26 @@ theNewFolder(){
         echo "Please Enter the Name of Folder: "
         read name
         mkdir $name
-        echo "Your $name Folder has been made"
-        
+        echo "Your $name Folder has been made" 
+        echo "Choose: "
+        echo "1. Make A New Folder Again"
+        echo "2. Go To The Menu"
+        echo "3. Exit"
+        echo "\nInput Your Choice:"
+        read pilihan
+        case $pilihan in
+        1) clear
+                theNewFolder;;
+        2) clear
+                theMenu;;
+        3) clear
+                exit;;
+        4) clear
+                echo "======================!!!======================"
+                echo "Option not available, please re-enter your choice !"
+                read dummyInput;
+                theNewFolder;;
+                
 }
 #theFilePermission(){}
 theStopWatch(){  

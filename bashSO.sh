@@ -97,8 +97,8 @@ theMenu(){
         6) clear
             echo "Good Bye!!!"
             echo "Kelompok 6"
-            echo "Endin Rahmanda - 20081010070"
-            echo "Endin Rahmanda - 20081010070"
+            echo "Endin Rahmanda    - 20081010070"
+            echo "Rangga Widiasmara - 21081010085"
             echo "Endin Rahmanda - 20081010070"
             echo "Press Anywhere To Exit !"
             read dummyInput;
@@ -113,8 +113,8 @@ theMenu(){
 clear
 echo -e "\nWelcome to our program !!!\n\n\n"
 echo "Sistem Operasi B081 - Kelompok 6"
-echo "Endin Rahmanda - 20081010070"
-echo "Endin Rahmanda - 20081010070"
+echo "Endin Rahmanda    - 20081010070"
+echo "Rangga Widiasmara - 21081010085"
 echo "Endin Rahmanda - 20081010070"
 echo -e "\n\n\nPress Anywhere To Start !"
 

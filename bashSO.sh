@@ -11,17 +11,6 @@ theExit() {
     echo "      |Ahmad Nouval Chufaiz | 21081010229|"
     echo "      ------------------------------------"
     echo -e "\n\n\n                Press Enter To Exit !"
-    echo -e "\n\n\n            Thank You For Having US ! \n\n"
-    echo "      ------------------------------------"
-    echo "      |Sistem Operasi B081  | Kelompok 6 |"
-    echo "      ------------------------------------"
-    echo "      |Endin Rahmanda       | 20081010070|"
-    echo "      ------------------------------------"
-    echo "      |Rangga Widiasmara    | 21081010085|"
-    echo "      ------------------------------------"
-    echo "      |Ahmad Nouval Chufaiz | 21081010229|"
-    echo "      ------------------------------------"
-    echo -e "\n\n\n                Press Enter To Exit !"
     read dummyInput
     exit
 }

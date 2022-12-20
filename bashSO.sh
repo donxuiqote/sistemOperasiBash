@@ -56,9 +56,9 @@ theNewFile(){
     theFilePermission;
 }
 
-theChangePermission(){
+# theChangePermission(){
 
-}
+# }
 
 theFilePermission(){
     clear
@@ -111,9 +111,9 @@ theTimer(){
         time="$(( $start - `date +%s` ))"
         printf '%s\r' "$(date -u -d "@$time" +%H:%M:%S)"
     done
-    echo "Your $seconds timer has done, you'll be directed to the Current Time menu in 5 seconds, please dont press anything"
+    echo -e "Your timer for $seconds seconds has done, you'll be directed to the Current Time menu in 5 seconds,\nplease dont press anything"
     sleep 5
-    theCurrentTime;
+    theMenu;
 }
 
 theCurrentTime(){

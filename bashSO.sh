@@ -194,7 +194,7 @@ theMenu(){
     esac
 }
 clear
-echo -e "\nWelcome to our program !!!\n\n\n"
+echo -e "\nWelcome to our program !!!\n\n\n\n"
 echo "------------------------------------"
 echo "|Sistem Operasi B081  | Kelompok 6 |"
 echo "------------------------------------"

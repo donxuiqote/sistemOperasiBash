@@ -3,7 +3,6 @@ theNewFolder(){
         echo "Please Enter the Name of Folder: "
         read name
         mkdir $name
-        echo "Your $name Folder has been made" 
         echo "Choose: "
         echo "1. Make A New Folder Again"
         echo "2. Go To The Menu"

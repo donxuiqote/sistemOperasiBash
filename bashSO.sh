@@ -56,6 +56,10 @@ theNewFile(){
     theFilePermission;
 }
 
+theChangePermission(){
+    
+}
+
 theFilePermission(){
     clear
     echo -e "\n\nFile Permission\n"

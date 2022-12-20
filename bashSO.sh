@@ -1,43 +1,98 @@
+theExit() {
+    clear
+    echo -e "\n\n\n            Thank You For Having US ! \n\n"
+    echo "      ------------------------------------"
+    echo "      |Sistem Operasi B081  | Kelompok 6 |"
+    echo "      ------------------------------------"
+    echo "      |Endin Rahmanda       | 20081010070|"
+    echo "      ------------------------------------"
+    echo "      |Rangga Widiasmara    | 21081010085|"
+    echo "      ------------------------------------"
+    echo "      |Ahmad Nouval Chufaiz | 21081010229|"
+    echo "      ------------------------------------"
+    echo -e "\n\n\n                Press Enter To Exit !"
+    read dummyInput
+    exit
+}
 theNewFolder(){
-        
+        clear
         echo "Please Enter the Name of Folder: "
         read name
         mkdir $name
-        echo "Your $name Folder has been made" 
-        echo "Choose    : "
-        echo "1. Make A New Folder Again"
-        echo "2. Go To The Menu"
-        echo "3. See lists"
+        echo -e "\n\n========================================"
+        echo "                 Choose"
+        echo "========================================"
+        echo "1. Create a new folder again"
+        echo "2. See What's On Directory"
+        echo "3. Go To The Menu List"
         echo "4. Exit"
-        echo "\nInput Your Choice:"
+        echo -e "\nInput Your Choice:"
         read pilihan
         case $pilihan in
-        1) theNewFolder;;
-        2) theMenu;;
-        3) echo -e "\n Your files and folders are shown below : \n"
-            ls
-            echo -e "\n\n Choose    :"
-            echo "1. Make A New Folder Again"
-            echo "2. Go To The Menu"
-            echo "3. See lists"
-            echo "4. Exit"
-            echo "\nInput Your Choice   :";;
-        4) exit;;
-        *) clear
-                echo "======================!!!======================"
-                echo "Option not available, please re-enter your choice !"
-                read dummyInput;
-                theMenu;;      
-        esac
+            1) theNewFolder;;
+            2) clear
+                echo -e "\nYour files and folders are shown below : \n"
+                ls
+                echo -e "\n\n\n========================================\n"
+                echo "Press anything to continue"
+                read dummyInput
+                case $dummyInput in 
+                    *) theMenu;;
+                    esac;;
+            3) theMenu;;
+            4) theExit;;
+            *) clear
+                    echo "======================!!!======================"
+                    echo "Option not available, please re-enter your choice !"
+                    read dummyInput;
+                    theMenu;;      
+            esac
 }
-                
+
+theNewFile(){
+    echo "Input your new .txt file   :"
+    read text 
+    echo "{$text}" > $text.txt
+    theFilePermission;
 }
-#theFilePermission(){}
+
+theChangePermission(){
+
+}
+
+theFilePermission(){
+    clear
+    echo -e "\n\nFile Permission\n"
+    echo "1) Add new file"
+    echo "2) Check file's permission"
+    echo "3) Change File's Permission"
+    echo "4) Back to main menu"
+    echo "5) Exit"
+    read pilihan
+    case $pilihan in
+        1) theNewFile;;
+        2) clear
+            echo "File's name : "
+            read fileNya
+            ls -l $fileNya
+                echo -e "\n\n\n========================================\n"
+                echo "Press anything to continue"
+                read dummyInput
+                theFilePermission;;            
+        3) theChangePermission;;
+        4) theMenu;;
+        5) theExit;;
+        *) theFilePermission;;
+    esac
+}
+
 theStopWatch(){  
 
         Stopwatchs() {
+        start=$(date +%s)
         while true; do
-            printf '%s\r' "$(date +%H:%M:%S)"
+            time="$(($(date +%s) - $start))"
+            printf '%s\r' "$(date -u -d "@$time" +%H:%M:%S)"
         done
         }
         echo "Here You Go !"
@@ -45,7 +100,7 @@ theStopWatch(){
         echo "Press enter to record the time"
         echo "Press ctrl + z to excecute the stopwatch"
         echo "========================================"
-            Stopwatchs
+        Stopwatchs
 }
 
 theTimer(){
@@ -95,7 +150,7 @@ theCurrentTime(){
         esac;;
     3) theMenu;;
     4) clear
-        exit;;
+        theExit;;
     *) clear
         echo "======================!!!======================"
         echo "Option not available, please re-enter your choice !"
@@ -107,7 +162,9 @@ theCurrentTime(){
 
 theMenu(){
     clear
-    echo "Menu"
+    echo "============================================"
+    echo "                  Menu                      "
+    echo "============================================"
     echo "1) Make a new folder (Membuat Folder)"
     echo "2) File Permission (Memanipulasi hak akses)"
     echo "3) Stopwatch"
@@ -128,14 +185,7 @@ theMenu(){
         5) clear;
             theCurrentTime;;
         6) clear
-            echo "Good Bye!!!"
-            echo "Kelompok 6"
-            echo "Endin Rahmanda       - 20081010070"
-            echo "Rangga Widiasmara    - 21081010085"
-            echo "Ahmad Nouval Chufaiz - 21081010229"
-            echo "Press Anywhere To Exit !"
-            read dummyInput;
-            exit;;
+            theExit;;
         *) clear;
             echo "======================!!!======================"
             echo "Option not available, please re-enter your choice !"
@@ -144,7 +194,7 @@ theMenu(){
     esac
 }
 clear
-echo -e "\nWelcome to our program !!!\n\n\n"
+echo -e "\nWelcome to our program !!!\n\n\n\n"
 echo "------------------------------------"
 echo "|Sistem Operasi B081  | Kelompok 6 |"
 echo "------------------------------------"
@@ -154,7 +204,7 @@ echo "|Rangga Widiasmara    | 21081010085|"
 echo "------------------------------------"
 echo "|Ahmad Nouval Chufaiz | 21081010229|"
 echo "------------------------------------"
-echo -e "\n\n\nPress Anywhere To Start !"
+echo -e "\n\n\nPress Enter To Start !"
 
 read dummyInput
 theMenu;

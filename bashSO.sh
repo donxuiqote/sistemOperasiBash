@@ -1,19 +1,25 @@
 theNewFolder(){
-        echo "Please Enter the Folder's name: "
+        
+        echo "Please Enter the Name of Folder: "
         read name
         mkdir $name
-        
-        echo "Please input your choice"
-        echo "1) Back to menu"
-        echo "2) Create new folder"
-        echo "2) Exit Program"
-        echo -e "\nInput Your Choice :"
-        read menu;
-        case $menu in
-        1) theMenu;;
-        2) theNewFolder;;
+        echo "Your $name Folder has been made" 
+        echo "Choose: "
+        echo "1. Make A New Folder Again"
+        echo "2. Go To The Menu"
+        echo "3. Exit"
+        echo "\nInput Your Choice:"
+        read pilihan
+        case $pilihan in
+        1) theNewFolder;;
+        2) theMenu;;
         3) exit;;
-        esac             
+        4) clear
+                echo "======================!!!======================"
+                echo "Option not available, please re-enter your choice !"
+                read dummyInput;
+                theMenu;;      
+        esac
 }
 #theFilePermission(){}
 theStopWatch(){  
@@ -91,11 +97,11 @@ theCurrentTime(){
 theMenu(){
     clear
     echo "Menu"
-    echo "1) Create a new folder (Membuat Folder)"
+    echo "1) Make a new folder (Membuat Folder)"
     echo "2) File Permission (Memanipulasi hak akses)"
     echo "3) Stopwatch"
     echo "4) Timer"
-    echo "5) Show Current Time"
+    echo "5) Mengetahui Current Time"
     echo "6) Exit"
     echo -e "\n\nPlease Input Your Choice   :"
     read menu;

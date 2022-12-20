@@ -1,7 +1,18 @@
 #theNewFolder(){}
 #theFilePermission(){}
-theStopWatch(){
+theStopWatch(){  
 
+        Stopwatchs() {
+        while true; do
+            printf '%s\r' "$(date +%H:%M:%S)"
+        done
+        }
+        echo "Here You Go !"
+        echo "========================================"
+        echo "Press enter to record the time"
+        echo "Press ctrl + z to excecute the stopwatch"
+        echo "========================================"
+            Stopwatchs
 }
 
 theTimer(){

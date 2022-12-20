@@ -1,19 +1,28 @@
 theNewFolder(){
-        
+        clear
         echo "Please Enter the Name of Folder: "
         read name
         mkdir $name
-        echo "Choose: "
+        echo "Choose    : "
         echo "1. Make A New Folder Again"
         echo "2. Go To The Menu"
-        echo "3. Exit"
+        echo "3. See lists"
+        echo "4. Exit"
         echo "\nInput Your Choice:"
         read pilihan
         case $pilihan in
         1) theNewFolder;;
         2) theMenu;;
-        3) exit;;
-        4) clear
+        3) echo -e "\n Your files and folders are shown below : \n"
+            ls
+            echo -e "\n\n Choose    :"
+            echo "1. Make A New Folder Again"
+            echo "2. Go To The Menu"
+            echo "3. See lists"
+            echo "4. Exit"
+            echo "\nInput Your Choice   :";;
+        4) exit;;
+        *) clear
                 echo "======================!!!======================"
                 echo "Option not available, please re-enter your choice !"
                 read dummyInput;

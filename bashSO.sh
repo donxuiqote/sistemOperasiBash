@@ -23,8 +23,8 @@ theTimer(){
         time="$(( $start - `date +%s` ))"
         printf '%s\r' "$(date -u -d "@$time" +%H:%M:%S)"
     done
-    echo "Your $seconds timer has done, you'll be directed to the Current Time menu in 10 seconds"
-    sleep 10
+    echo "Your $seconds timer has done, you'll be directed to the Current Time menu in 5 seconds, please dont press anything"
+    sleep 5
     theCurrentTime;
 }
 
@@ -106,7 +106,7 @@ theMenu(){
         *) clear;
             echo "======================!!!======================"
             echo "Option not available, please re-enter your choice !"
-            read dummyInput;
+            sleep 3
             theMenu;;
     esac
 }

@@ -61,7 +61,29 @@ theChangePermission(){
 }
 
 theFilePermission(){
-
+    clear
+    echo -e "\n\nFile Permission\n"
+    echo "1) Add new file"
+    echo "2) Check file's permission"
+    echo "3) Change File's Permission"
+    echo "4) Back to main menu"
+    echo "5) Exit"
+    read pilihan
+    case $pilihan in
+        1) theNewFile;;
+        2) clear
+            echo "File's name : "
+            read fileNya
+            ls -l $fileNya
+                echo -e "\n\n\n========================================\n"
+                echo "Press anything to continue"
+                read dummyInput
+                theFilePermission;;            
+        3) theChangePermission;;
+        4) theMenu;;
+        5) theExit;;
+        *) theFilePermission;;
+    esac
 }
 
 theStopWatch(){  

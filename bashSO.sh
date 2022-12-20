@@ -1,4 +1,11 @@
-#theNewFolder(){}
+theNewFolder(){
+        
+        echo "Please Enter the Name of Folder: "
+        read name
+        mkdir $name
+        echo "Your $name Folder has been made"
+        
+}
 #theFilePermission(){}
 theStopWatch(){  
 
@@ -97,9 +104,9 @@ theMenu(){
         6) clear
             echo "Good Bye!!!"
             echo "Kelompok 6"
-            echo "Endin Rahmanda    - 20081010070"
-            echo "Rangga Widiasmara - 21081010085"
-            echo "Endin Rahmanda - 20081010070"
+            echo "Endin Rahmanda       - 20081010070"
+            echo "Rangga Widiasmara    - 21081010085"
+            echo "Ahmad Nouval Chufaiz - 21081010229"
             echo "Press Anywhere To Exit !"
             read dummyInput;
             exit;;
@@ -112,10 +119,15 @@ theMenu(){
 }
 clear
 echo -e "\nWelcome to our program !!!\n\n\n"
-echo "Sistem Operasi B081 - Kelompok 6"
-echo "Endin Rahmanda    - 20081010070"
-echo "Rangga Widiasmara - 21081010085"
-echo "Endin Rahmanda - 20081010070"
+echo "------------------------------------"
+echo "|Sistem Operasi B081  | Kelompok 6 |"
+echo "------------------------------------"
+echo "|Endin Rahmanda       | 20081010070|"
+echo "------------------------------------"
+echo "|Rangga Widiasmara    | 21081010085|"
+echo "------------------------------------"
+echo "|Ahmad Nouval Chufaiz | 21081010229|"
+echo "------------------------------------"
 echo -e "\n\n\nPress Anywhere To Start !"
 
 read dummyInput

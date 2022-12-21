@@ -61,6 +61,9 @@ theChangePermission(){
     echo "write the file's name :"
     read ijinFile
     { sudo chmod +x $ijinFile; } && { echo "The file is now writeable"; }
+    echo "Press Anywhere to continue"
+    read dummyInput
+    theMenu
 }
 
 theFilePermission(){

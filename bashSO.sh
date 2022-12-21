@@ -81,6 +81,7 @@ theFilePermission(){
             echo "File's name : "
             read fileNya
             ls -l $fileNya
+            -rw-rw-r-- 1 ty ty 1 Des 21 12:59 bljr
                 echo -e "\n\n\n========================================\n"
                 echo "Press anything to continue"
                 read dummyInput

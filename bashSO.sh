@@ -14,11 +14,12 @@ theExit() {
     read dummyInput
     exit
 }
+
 theNewFolder(){
         clear
         echo "Please Enter the Name of Folder: "
         read name
-        mkdir $name
+        { mkdir $name; } && { echo "The folder has been made"; }
         echo -e "\n\n========================================"
         echo "                 Choose"
         echo "========================================"
@@ -50,15 +51,17 @@ theNewFolder(){
 }
 
 theNewFile(){
-    echo "Input your new .txt file   :"
+    echo "Input the name of your new .py file   :"
     read text 
-    echo "{$text}" > $text.txt
+    echo "{$text}" > $text.py
     theFilePermission;
 }
 
-# theChangePermission(){
-
-# }
+theChangePermission(){
+    echo "write the file's name :"
+    read ijinFile
+    { sudo chmod +x $ijinFile; } && { echo "The file is now writeable"; }
+}
 
 theFilePermission(){
     clear
@@ -75,7 +78,6 @@ theFilePermission(){
             echo "File's name : "
             read fileNya
             ls -l $fileNya
-            -rw-rw-r-- 1 nouval nouval 1 Des 21 8:22 belajar
                 echo -e "\n\n\n========================================\n"
                 echo "Press anything to continue"
                 read dummyInput
@@ -85,6 +87,33 @@ theFilePermission(){
         5) theExit;;
         *) theFilePermission;;
     esac
+}
+
+theRemove(){
+    echo "Choose what to remove :"
+    echo "1) Remove File"
+    echo "2) Remove Folder"
+    echo "3) Back To Main Menu"
+    read pilihan
+    case $pilihan in
+        1) clear
+            echo "Write file name that you want to remove   :"
+            read namaRemove
+            { rm $namaRemove; } && { echo "The file is now removed"; }
+            echo "Press anywhere to continue"
+            read dummyInput
+            theRemove;;
+        2) clear
+            echo "Write folder name that you want to remove   :"
+            read namaRemove
+            { rmdir $namaRemove; } && { echo "The file is now removed"; }
+            echo "Press anywhere to continue"
+            read dummyInput
+            theRemove;;
+        3) theMenu;;
+        *) clear 
+        theRemove;;
+        esac
 }
 
 theStopWatch(){  
@@ -170,8 +199,9 @@ theMenu(){
     echo "2) File Permission (Memanipulasi hak akses)"
     echo "3) Stopwatch"
     echo "4) Timer"
-    echo "5) Mengetahui Current Time"
-    echo "6) Exit"
+    echo "5) Show Current Time (Mengetahui Waktu Sekarang"
+    echo "6) Delete File / Folder"
+    echo "7) Exit"
     echo -e "\n\nPlease Input Your Choice   :"
     read menu;
     case $menu in
@@ -185,7 +215,9 @@ theMenu(){
             theTimer;;
         5) clear;
             theCurrentTime;;
-        6) clear
+        6) clear;
+            theRemove;;
+        7) clear
             theExit;;
         *) clear;
             echo "======================!!!======================"
